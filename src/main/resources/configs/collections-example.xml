@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="setter-and-constructor-injection-example.xml"/>
+    <import resource="annotation-injections-example.xml"/>
+
+    <bean id="crew1" class="com.efimchick.pirates.Crew">
+        <property name="oddSabres">
+            <list value-type="com.efimchick.pirates.Sabre">
+                <ref bean="sabre"/>
+                <ref bean="sabre"/>
+                <ref bean="jacksSabre"/>
+            </list>
+        </property>
+        <property name="pirates">
+            <map key-type="java.lang.String" value-type="com.efimchick.pirates.Pirate">
+                <entry key="captain" value-ref="jack"/>
+                <entry>
+                    <key><value>boatman</value></key>
+                    <ref bean="barbossa"/>
+                </entry>
+                <entry key="assaultMaster">
+                    <ref bean="peterBlood"/>
+                </entry>
+            </map>
+        </property>
+
+    </bean>
+
+    <util:list id="sabres">
+        <ref bean="sabre"/>
+    </util:list>
+
+    <util:map id="pirates">
+        <entry key="captain">
+            <ref bean="copyOfJack"/>
+        </entry>
+    </util:map>
+    <bean id="crew2" class="com.efimchick.pirates.Crew">
+        <property name="oddSabres" ref="sabres"/>
+        <property name="pirates" ref="pirates"/>
+    </bean>
+</beans>
