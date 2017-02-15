@@ -1,7 +1,6 @@
-package com.efimchick.contexttryots;
+package com.efimchick.springshelf.contexttryots;
 
-import com.efimchick.pirates.Crew;
-import com.efimchick.pirates.Pirate;
+import com.efimchick.springshelf.pirates.Crew;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 

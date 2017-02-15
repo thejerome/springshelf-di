@@ -1,4 +1,4 @@
-package com.efimchick.pirates;
+package com.efimchick.springshelf.pirates;
 
 import java.util.List;
 import java.util.Map;

@@ -7,16 +7,16 @@
     <import resource="setter-and-constructor-injection-example.xml"/>
     <import resource="annotation-injections-example.xml"/>
 
-    <bean id="crew1" class="com.efimchick.pirates.Crew">
+    <bean id="crew1" class="com.efimchick.springshelf.pirates.Crew">
         <property name="oddSabres">
-            <list value-type="com.efimchick.pirates.Sabre">
+            <list value-type="com.efimchick.springshelf.pirates.Sabre">
                 <ref bean="sabre"/>
                 <ref bean="sabre"/>
                 <ref bean="jacksSabre"/>
             </list>
         </property>
         <property name="pirates">
-            <map key-type="java.lang.String" value-type="com.efimchick.pirates.Pirate">
+            <map key-type="java.lang.String" value-type="com.efimchick.springshelf.pirates.Pirate">
                 <entry key="captain" value-ref="jack"/>
                 <entry>
                     <key><value>boatman</value></key>
@@ -39,7 +39,7 @@
             <ref bean="copyOfJack"/>
         </entry>
     </util:map>
-    <bean id="crew2" class="com.efimchick.pirates.Crew">
+    <bean id="crew2" class="com.efimchick.springshelf.pirates.Crew">
         <property name="oddSabres" ref="sabres"/>
         <property name="pirates" ref="pirates"/>
     </bean>

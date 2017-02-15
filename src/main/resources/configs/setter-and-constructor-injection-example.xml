@@ -6,13 +6,14 @@
 
     <bean id="materialSteel" class="java.lang.String" c:_0="steel"/>
 
-    <bean id="sabre" name="jacksSabre" class="com.efimchick.pirates.Sabre" c:material-ref="materialSteel">
+    <bean id="sabre" name="jacksSabre" class="com.efimchick.springshelf.pirates.Sabre" c:material-ref="materialSteel">
         <constructor-arg type="double">
             <value>0.7</value>
         </constructor-arg>
     </bean>
+    <alias name="sabre" alias="aliasedSabre"/>
 
-    <bean id="peterBlood" class="com.efimchick.pirates.Pirate"
+    <bean id="peterBlood" class="com.efimchick.springshelf.pirates.Pirate"
         p:name="Peter Blood">
         <property name="cash" value="12"/>
         <property name="drunkness" value="0.3"/>
@@ -20,19 +21,23 @@
 
     </bean>
 
-    <bean id="jack" class="com.efimchick.pirates.Pirate"
+    <bean id="jack" class="com.efimchick.springshelf.pirates.Pirate"
         p:name="Jack Sparrow">
         <property name="cash" value="12"/>
         <property name="drunkness" value="0.3"/>
-        <property name="sabre" ref="sabre"/>
+        <property name="sabre" ref="aliasedSabre"/>
 
     </bean>
 
-    <bean id="copyOfJack" class="com.efimchick.pirates.Pirate">
+    <bean id="copyOfJack" class="com.efimchick.springshelf.pirates.Pirate">
         <property name="cash" value="#{jack.cash}"/>
         <property name="drunkness" value="#{jack.drunkness}"/>
         <property name="sabre" value="#{jack.sabre}"/>
         <property name="name" value="#{'pseudo ' + jack.name}"/>
+    </bean>
+
+    <bean id="sonOfJack" class="com.efimchick.springshelf.pirates.Pirate" parent="jack">
+        <property name="name" value="#{'son of Jack'}"/>
     </bean>
 
 </beans>

@@ -1,7 +1,6 @@
-package com.efimchick.contexttryots;
+package com.efimchick.springshelf.contexttryots;
 
-import com.efimchick.pirates.Pirate;
-import org.springframework.beans.factory.BeanFactory;
+import com.efimchick.springshelf.pirates.Pirate;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 

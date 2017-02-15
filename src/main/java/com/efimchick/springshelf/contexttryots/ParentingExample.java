@@ -1,7 +1,6 @@
-package com.efimchick.contexttryots;
+package com.efimchick.springshelf.contexttryots;
 
-import com.efimchick.pirates.Pirate;
-import org.springframework.context.ApplicationContext;
+import com.efimchick.springshelf.pirates.Pirate;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.util.Map;

@@ -1,6 +1,5 @@
-package com.efimchick.pirates;
+package com.efimchick.springshelf.pirates;
 
-import com.efimchick.pirates.Sabre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -11,7 +10,7 @@ import java.math.BigDecimal;
  * Created by theje on 2017-02-07.
  */
 @Component("barbossa")
-public class Pirate {
+public class Pirate{
 
     @Value("Barbossa")
     private String name;
